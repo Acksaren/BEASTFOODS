@@ -1,23 +1,31 @@
 <body>
   {{>header}}
 
-
-<div class="login">
-
-    <br>
-    <fieldset>
-    <h1 class="sign-in-text">Welcome Back</h1> <br>
-
-    <label class="email-text" for="email">Email Address</label>
-    <input type="email" id="email" name="email" required placeholder="Email Address"> <br>
-
-    <label class="password-text" for="password">Password</label>
-    <input type="password" id="password" name="password"  placeholder="Password" > <br> <br>
-
-    <input type="submit" value="Login" class="button">
-      
-  </fieldset>
-
+<div class="d-flex justify-content-center" id="auth-form">
+	<form class="carrd" method="POST" action="/sign-in">
+		<div class="carrd-body">
+			<h5 class="carrd-title">Welcome Back</h5>
+    		<h6 class="carrd-subtitle">
+    			Sign in to your account
+    		</h6>
+    		<hr>
+			<div class="mb-3">
+				<input type="text" name="email" class="form-control" placeholder="Email address" value="{{user.email}}">
+			 {{#if err.erroremail}}
+              <div class="form-error">{{err.msgemail}}</div>
+              {{/if}}
+			</div>
+			<div class="mb-3">
+				<input type="password" name="password" class="form-control" placeholder="Password" value="{{user.password}}">
+			{{#if err.errorpassword}}
+              <div class="form-error">{{err.msgpassword}}</div>
+              {{/if}}
+			</div>
+			<button type="submit" class="btn btn-info">
+				Log in
+			</button>
+		</div>
+	</form>
 </div>
 
   {{>footer}}

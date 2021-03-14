@@ -402,153 +402,57 @@ footer {
 
 
 
-
-/*Sign-Up Form*/
-@media screen and (max-width: 600px) {
-  .info,
-  input[type="submit"] {
-    width: 100%;
-  }
+/* login and register forms */
+#auth-form {
+  width: 50%;
+  margin: 30px auto 100px;
+  padding: 0 10%;
 }
 
-input[type="password"],
-input[type="text"],
-input[type="email"],
-select,
+#auth-form .carrd-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
 
-textarea {
-  font-family: "Source Serif Pro", serif;
-  font-size: 15px;
-  width: 100%;
-  padding: 15px;
-  border: 1px solid orange;
-  border-radius: 8px;
-  box-sizing: border-box;
-  margin: 5px 0 22px 0;
-  display: inline-block;
+#auth-form .carrd-subtitle {
+  color: rgb(56, 102, 54);
+  font-size: 1.1em;
+  margin: 0;
 }
-input[type="submit"] {
-  font-family: "Source Serif Pro", serif;
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 10px 25px;
-  color: black;
-  background-color: orange;
-  text-align: center;
-  cursor: pointer;
-}
-input[type="submit"]:hover {
-  background-color: #555;
-  color: white;
-}
-.registration-box .sign-in-text {
-  font-family: "Source Serif Pro", serif;
-  text-align: center;
-}
-.registration-box {
-  font-family: "Source Serif Pro", serif;
-  border-radius: 20px;
-  padding: 50px 50px;
-  background-color: coral;
-  width: 800px;
-  height: 850px;
-  margin: auto;
-  position: relative;
-}
-.registration-box .label {
-  display: block;
+
+#auth-form input.form-control {
+  width: calc(100% - 22px);
+  height: 44px;
   margin-bottom: 10px;
-}
-.registration-box fieldset {
-  border-radius: 15px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  margin: 0px 0px 10px 0px;
-  border: 3px solid rgb(248, 236, 68);
-  padding: 50px;
-  background: lightgray;
-  box-shadow: inset 0px 0px 15px coral;
-  -moz-box-shadow: inset 0px 0px 15px coral;
-  -webkit-box-shadow: inset 0px 0px 15px coral;
-  position: relative;
+  margin-top: 10px;
+  padding: 0 10px;
 }
 
-.registration-box fieldset legend {
-  color: #388eff;
-  font-family: "Source Serif Pro", serif;
-  font-size: 20px;
-  border-top: 1px solid coral;
-  border-left: 1px solid coral;
-  border-right: 1px solid coral;
-  border-radius: 5px 5px 0px 0px;
-  -webkit-border-radius: 5px 5px 0px 0px;
-  -moz-border-radius: 5px 5px 0px 0px;
-  background: rgb(252, 250, 177);
-  padding: 0px 8px 3px 8px;
-  box-shadow: -0px -1px 2px #f1f1f1;
-  -moz-box-shadow: -0px -1px 2px #f1f1f1;
-  -webkit-box-shadow: -0px -1px 2px #f1f1f1;
-  font-weight: normal;
-  font-family: "Noto Serif JP";
-}
-form {
-  width: 550px;
-  height: 650px;
-  margin: auto;
-  position: relative;
+#auth-form button {
+  float: right;
+  border: 1px solid rgb(255, 205, 68);
+  color: rgb(20, 20, 19);
+  background-color: rgb(255, 205, 68);
+  padding: 10px;
+  padding-bottom: 10px;
+  width: 50%;
 }
 
-
-
-/*Log In Form*/
-.login .sign-in-text {
-  font-family: "Source Serif Pro", serif;
+.form-error {
+display: block;
+color: rgb(145, 3, 3);
+}
+/*welcome page*/
+.wel-container {
   text-align: center;
 }
-.login {
-  font-family: "Source Serif Pro", serif;
-  border-radius: 20px;
-  padding: 50px 50px;
-  background-color: coral;
-  width: 800px;
-  height: 650px;
-  margin: auto;
-  position: relative;
-}
-.login .label {
-  display: block;
-  margin-bottom: 10px;
-}
-.login fieldset {
-  border-radius: 15px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  margin: 0px 0px 10px 0px;
-  border: 3px solid rgb(248, 236, 68);
-  padding: 50px;
-  background: lightgrey;
-  box-shadow: inset 0px 0px 15px coral;
-  -moz-box-shadow: inset 0px 0px 15px coral;
-  -webkit-box-shadow: inset 0px 0px 15px coral;
-  position: relative;
-}
 
-.login fieldset legend {
-  color: #388eff;
-  font-family: "Source Serif Pro", serif;
-  font-size: 20px;
-  border-top: 1px solid coral;
-  border-left: 1px solid coral;
-  border-right: 1px solid coral;
-  border-radius: 5px 5px 0px 0px;
-  -webkit-border-radius: 5px 5px 0px 0px;
-  -moz-border-radius: 5px 5px 0px 0px;
-  background: rgb(252, 250, 177);
-  padding: 0px 8px 3px 8px;
-  box-shadow: -0px -1px 2px #f1f1f1;
-  -moz-box-shadow: -0px -1px 2px #f1f1f1;
-  -webkit-box-shadow: -0px -1px 2px #f1f1f1;
-  font-weight: normal;
-  font-family: "Noto Serif JP";
+.btn-info {
+
+  border: 1px solid rgb(255, 205, 68);
+  color: rgb(20, 20, 19);
+  background-color: rgb(255, 205, 68);
+  padding: 10px;
+  padding-bottom: 10px;
+  width: 50%;
 }
