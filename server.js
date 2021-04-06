@@ -2,7 +2,9 @@ const path = require("path");
 const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const app = express();
+const session = require('express-session');
 
 const dotenv = require('dotenv');
 dotenv.config({path:"./config/keys.env"});
@@ -23,15 +25,31 @@ app.get("/headers", (req, res) => {
   res.send(headers);
 });
 
+
+// Set up express-session
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+      maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  }
+}));
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+});
+
 // Load Controllers
 const generalController = require("./controllers/general");
 app.use("/", generalController);
-const signInController = require("./controllers/signinController");
-app.use("/", signInController);
-const registrationController = require("./controllers/registrationController");
-const { Mongoose } = require("mongoose");
-const { stringify } = require("querystring");
-app.use("/", registrationController);
+const userController = require("./controllers/user");
+app.use("/user", userController);
+const customerController = require("./controllers/customer");
+app.use("/dashboard/customer", customerController);
+const clerkController = require("./controllers/clerk");
+app.use("/dashboard/clerk", clerkController);
+
 
 // Set up body parser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -49,30 +67,18 @@ app.listen(PORT, onHttpStart);
 
 
 // Connect to the MongoDb
-Mongoose.connect("mongodb+srv://acksaren:Programmer2021@web322cluster.ashtc.mongodb.net/web322db?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true
-  }
-);
-
-// Define our Models (NEEDS WORK)
-const Schema = mongoose.Schema;
-
-const NameSchema = new Schema({
-    "nickname": {
-        "type": String,
-        "unique": true
-    },
-    "firstName": String,
-    "ame": String,
-    "age": {
-        "type": Number,
-        "default": 25
-    }
+})
+.then(() => {
+    console.log("Connected to the MongoDB database.");
+})
+.catch((err) => {
+    console.log(`There was a problem connecting to the MongoDB...${err}`)
 });
 
-var NameModel = mongoose.model("names", NameSchema);
 
 
 
