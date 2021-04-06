@@ -29,12 +29,12 @@ app.use("/", generalController);
 const signInController = require("./controllers/signinController");
 app.use("/", signInController);
 const registrationController = require("./controllers/registrationController");
+const { Mongoose } = require("mongoose");
+const { stringify } = require("querystring");
 app.use("/", registrationController);
 
 // Set up body parser
 app.use(bodyParser.urlencoded({ extended: false }));
-
-
 
 
 // call this function after the http server starts listening for requests
@@ -46,3 +46,34 @@ function onHttpStart() {
 
 // setup http server to listen on HTTP_PORT
 app.listen(PORT, onHttpStart);
+
+
+// Connect to the MongoDb
+Mongoose.connect("mongodb+srv://acksaren:Programmer2021@web322cluster.ashtc.mongodb.net/web322db?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true
+  }
+);
+
+// Define our Models (NEEDS WORK)
+const Schema = mongoose.Schema;
+
+const NameSchema = new Schema({
+    "nickname": {
+        "type": String,
+        "unique": true
+    },
+    "firstName": String,
+    "ame": String,
+    "age": {
+        "type": Number,
+        "default": 25
+    }
+});
+
+var NameModel = mongoose.model("names", NameSchema);
+
+
+
+
