@@ -1,68 +1,25 @@
-
-<body>
-  
-   {{>header}}
-
-  {{>hero}}
-
-  <div class="container">
-  <h1>{{Category}}</h1>
-  </div>
-
+{{>header}}
+{{>hero}}
+{{#each meals as |category|}}
   <br>
-  <h1 >Vegetarian Meals</h1>
+  <h1>{{category._id}}</h1>
   <br>
   <div class="grid">
- {{#each vegetarianMeals}}
-<div class="column">
-    <div class="card">
-      <img src={{imageURL}} height="200" width="200">
-        <div class="text">
-          <h2 class="headings">{{Title}}</h2>
-            <p class="desc"> {{whatIsIncluded}}<br>
-             </p>
-             <p class="desc2">{{Description}}</p>
-             <br>
-              <button class="button-price">${{Price}}</button>
-</div>
-</div>
-</div>
-  {{/each}}
-
-   
+    {{#each category.meals}}
+      <div class="column">
+        <div class="card">
+          <img src={{this.imageURL}} height="200" width="200">
+          <div class="text">
+            <h2 class="headings">{{this.Title}}</h2>
+              <p class="desc">{{this.whatIsIncluded}}<br></p>
+              <p class="desc2">{{this.Description}}</p>
+              <br>
+              <button class="button-price">${{this.Price}}</button>
+          </div>
+        </div>
+      </div>
+    {{/each}}
   </div>
-
-<br>
-  <h1 >Meat Meals</h1>
-
   <br>
-     
-  <div class="grid">
-      {{#each meatMeals}}
- <div class="column">
-    <div class="card">
-      <img src={{imageURL}} height="200" width="200">
-        <div class="text">
-          <h2 class="headings">{{Title}}</h2>
-            <p class="desc"> {{whatIsIncluded}}<br>
-             </p>
-             <p class="desc2">{{Description}}</p>
-             <br>
-              <button class="button-price">${{Price}}</button>
-        </div>
-        </div>
-        </div>
-  {{/each}}
-
-   
-  </div>
-
-
-
-
-
-
-
-
-  {{>footer}}
-</body>
+{{/each}}
+{{>footer}}
