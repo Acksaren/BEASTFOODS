@@ -1,0 +1,15 @@
+{{>header}}
+<div class="wel-container">
+  <div class="row text-center">
+    <div class="col-sm-12">
+      <br><br>
+      <h2 class="text-info">Welcome to your dashboard!</h2>
+      <p>Logged in as {{ session.user.fullName }}</p>
+      <br>
+      <br>
+      <a href="/user/logout" class="btn-info">Log out</a>
+      <br><br>
+    </div>
+  </div>
+</div>
+{{>footer}}

@@ -9,11 +9,21 @@
          <li class="links-item">
         <a href='/onTheMenu' class="links">ON THE MENU</a>
          </li>
+       
+        {{#if session.user}}
+          <li class="links-item">
+            <a href="/dashboard/{{ session.role }}" class="links">
+              MY DASHBOARD
+            </a>
+          </li>
+        {{else}}
         <li class="links-item">
-            <a href='/registration' class="links">SIGN-UP</a>
+             <a href='/user/sign-in' class="links">LOG IN</a>
+        </li>   
+        <li class="links-item">
+            <a href='/user/registration' class="links">SIGN-UP</a>
         </li>
-        <li class="links-item">
-             <a href='/sign-in' class="links">LOG IN</a>
-        </li>        
+        
+         {{/if}}     
       </ul>
 </nav>

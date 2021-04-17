@@ -2,12 +2,15 @@
   {{>header}}
 
 <div class="d-flex justify-content-center" id="auth-form">
-	<form class="carrd" method="POST" action="/sign-in">
+	<form class="carrd" method="POST" action="/user/sign-in">
 		<div class="carrd-body">
 			<h5 class="carrd-title">Welcome Back</h5>
     		<h6 class="carrd-subtitle">
     			Sign in to your account
     		</h6>
+			{{#each errors}}
+				<div class="form-error">{{this}}</div>
+			{{/each}}
     		<hr>
 			<div class="mb-3">
 				<input type="text" name="email" class="form-control" placeholder="Email address" value="{{user.email}}">
@@ -20,6 +23,14 @@
 			{{#if err.errorpassword}}
               <div class="form-error">{{err.msgpassword}}</div>
               {{/if}}
+			</div>
+			<div class="mb-3">
+				<label class="info" for="password">Log In:</label>
+				 <input type="radio" id="role" name="role" value="customer" required>
+                  Customer <br>
+				  &nbsp; &nbsp; &nbsp; &nbsp; 
+				   <input type="radio" id="role" name="role" value="clerk" required>
+               Data Entry Clerk
 			</div>
 			<button type="submit" class="btn btn-info">
 				Log in
