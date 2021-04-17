@@ -1,53 +1,53 @@
 {{>header}}
-<h1>Add Meal</h1>
+<h1>Edit Meal</h1>
 <div class="d-flex justify-content-center" id="auth-form">
-	<form class="carrd" method="POST" action="/dashboard/clerk/save-meal" enctype="multipart/form-data">
+	<form class="carrd" method="POST" action="/dashboard/clerk/update-meal/{{ meal._id}}" enctype="multipart/form-data">
 		<div class="carrd-body">
 			<div class="mb-3">
 				<label>Title</label>
-				<input type="text" name="Title" class="form-control" required>
+				<input type="text" name="Title" class="form-control" value="{{ meal.Title }}" required>
 			</div>
 			<div class="mb-3">
 				<label>Price</label>
-				<input type="number" name="Price" class="form-control" step=".01" required>
+				<input type="number" name="Price" class="form-control" step=".01" value="{{ meal.Price }}" required>
 			</div>
             <div class="mb-3">
 				<label>Servings</label>
-				<input type="number" name="Servings" class="form-control" required>
+				<input type="number" name="Servings" class="form-control" value="{{ meal.Servings }}" required>
 			</div>
             <div class="mb-3">
 				<label>Calories Per Serving</label>
-				<input type="number" name="calorieCount" class="form-control" required>
+				<input type="number" name="calorieCount" class="form-control" value="{{ meal.calorieCount }}" required>
 			</div>
             <div class="mb-3">
 				<label>Cooking Time</label>
-				<input type="text" name="cookingTime" class="form-control" required>
+				<input type="text" name="cookingTime" class="form-control" value="{{ meal.cookingTime }}" required>
 			</div>
             <div class="mb-3">
 				<label>What's included</label>
-                <input type="text" name="whatIsIncluded" class="form-control" required>
+                <input type="text" name="whatIsIncluded" class="form-control" value="{{ meal.whatIsIncluded }}" required>
 			</div>
 			<div class="mb-3">
 				<label>Category</label>
-				<input type="text" name="Category" class="form-control" required>
+				<input type="text" name="Category" class="form-control" value="{{ meal.Category }}" required>
 			</div>
 			<div class="mb-3">
 				<br>
 				<label>Top meal</label>
 				<select class="form-control" name="topMeal" required>
-					<option value="true">Yes</option>
-					<option value="false">No</option>
+					<option value="true" {{#if meal.topMeal}}selected{{/if}}>Yes</option>
+					<option value="false" {{#unless meal.topMeal}}selected{{/unless}}>No</option>
 				</select>
 				<br><br>
 			</div>
             <div class="mb-3">
 				<label>Description</label>
-				<textarea name="Description" class="form-control" rows="8" style="width: 100%;" required></textarea>
+				<textarea name="Description" class="form-control" rows="8" style="width: 100%;" required>{{ meal.Description }}</textarea>
                 <br><br>
 			</div>
             <div class="mb-3">
                 <label>Select image</label>
-				<input type="file" name="image" accept="image/*" required>
+				<input type="file" name="image" accept="image/*">
                 <br><br>
 			</div>
 			<div class="clearfix">
