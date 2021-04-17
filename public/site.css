@@ -454,5 +454,12 @@ color: rgb(145, 3, 3);
   background-color: rgb(255, 205, 68);
   padding: 10px;
   padding-bottom: 10px;
-  width: 50%;
+  width: auto;
+  display: inline-block;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }

@@ -61,33 +61,23 @@
 <!-- Top Meals-->
 <div class="top">
   <h1>Top Meals We Offer</h1> <br>
-
-
   <br>
   <br>
-
-     
-
   <div class="grid">
-
- {{#each meals}}
-  {{#if topMeal}}
-
-<div class="column">
-    <div class="card">
-        <img src={{this.imageURL}} height="300" width="300">
-        <div class="text">
-          <h2 class="headings">{{this.Title}}</h2>
-          <p class="desc">{{this.whatIsIncluded}}<br>
-          </p>
-          <br>
-          <button class="button-price">{{this.Price}}</button>
+    {{#each meals}}
+      <div class="column">
+        <div class="card">
+          <img src={{this.imageURL}} height="300" width="300">
+          <div class="text">
+            <h2 class="headings">{{this.Title}}</h2>
+            <p class="desc">{{this.whatIsIncluded}}<br>
+            </p>
+            <br>
+            <button class="button-price">{{this.Price}}</button>
+          </div>
         </div>
       </div>
-      </div>
-
-        {{/if}}
-  {{/each}}
+    {{/each}}
   </div>
 </div>
-      {{>footer}}
+{{>footer}}
