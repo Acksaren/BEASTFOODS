@@ -1,4 +1,3 @@
-<<<<<<< HEAD:views/user/registration.hbs
  <body>  
    {{>header}}
  
@@ -43,49 +42,3 @@
 
   {{>footer}}
 </body>
-=======
- <body>  
-   {{>header}}
- 
- <div class="d-flex justify-content-center" id="auth-form">
-	<form class="carrd" method="POST" action="/registration">
-		<div class="carrd-body">
-			<h5 class="carrd-title">Sign Up</h5>
-    		<h6 class="carrd-subtitle">
-    			Create your account today
-    		</h6>
-    		<hr>
-    		<div class="mb-3">
-				<input type="text" name="firstName" class="form-control" placeholder="First Name" value="{{ user.firstName }}">
-				{{#if err.errorFirstName}}
-      <div class="form-error">{{err.msgErrorFirstname}}</div>
-      {{/if}}
-			</div>
-			<div class="mb-3">
-				<input type="text" name="lastName" class="form-control" placeholder="Last Name" value="{{ user.lastName }}">
-					{{#if err.errorLastName}}
-      <div class="form-error">{{err.msgErrorLastname}}</div>
-      {{/if}}
-			</div>
-			<div class="mb-3">
-				<input type="text" name="email" class="form-control" placeholder="Email address" value="{{ user.email }}">
-			{{#if err.errorEmail}}
-      <div class="form-error">{{err.msgErrorEmail}}</div>
-      {{/if}}
-			</div>
-			<div class="mb-3">
-				<input type="password" name="password" class="form-control" placeholder="Password" value="{{ user.password }}">
-			 {{#if err.errorPassword}}
-      <div class="form-error">{{err.msgErrorPassword}}</div>
-      {{/if}}
-			</div>
-			<button type="submit" class="btn btn-info">
-				Register
-			</button>
-		</div>
-	</form>
-</div>
-
-  {{>footer}}
-</body>
->>>>>>> 6b8975b7b18bbb6c480489982d208207aedf4cee:views/general/registration.hbs
