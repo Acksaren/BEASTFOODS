@@ -1,3 +1,5 @@
+const meal = require("../models/meal");
+
 var mealKit = [
   {
     Title: "Tofu Fried Rice.",
@@ -100,3 +102,27 @@ module.exports.getTopMeal = function () {
 
   return filtered;
 };
+
+module.exports.onMenu = async function () {
+  return await meal.aggregate([
+		{
+			$group: {
+				_id: '$Category',
+				meals: {
+					$push: {
+						imageURL: '$imageURL', 
+						Title: '$Title', 
+						whatIsIncluded: '$whatIsIncluded',
+						Description: '$Description',
+						Price: '$Price'
+					}
+				}
+			}
+		}
+	]);
+}
+
+module.exports.topMeals = async function () {
+  let meals = await meal.find({topMeal: true});
+  return meals.map(meal => meal.toJSON());
+}

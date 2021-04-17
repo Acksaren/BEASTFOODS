@@ -1,0 +1,29 @@
+{{>header}}
+<div class="wel-container">
+    <h1>Meals</h1>
+    <br>
+    <br>
+    <p>
+        <a href="/dashboard/clerk/add-meal" class="btn-info">Upload a Meal</a>
+    </p>
+    <br>
+    <br>
+    <div class="grid">
+        {{#each meals}}
+            <div class="column">
+                <div class="card">
+                    <img src={{this.imageURL}} height="200" width="200">
+                    <div class="text">
+                        <h2 class="headings">{{this.Title}}</h2>
+                        <p class="desc"> {{this.whatIsIncluded}}</p>
+                        <p class="desc2">${{this.Price}}</p>
+                        <p>
+                            <a href="/dashboard/clerk/edit-meal/{{this._id}}" class="button-price">Edit</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+{{>footer}}

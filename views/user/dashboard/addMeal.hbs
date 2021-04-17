@@ -1,0 +1,67 @@
+{{>header}}
+<h1>Add Meal</h1>
+<div class="d-flex justify-content-center" id="auth-form">
+	<form class="carrd" method="POST" action="/dashboard/clerk/save-meal" enctype="multipart/form-data">
+		<div class="carrd-body">
+			<div class="mb-3">
+				<label>Title</label>
+				<input type="text" name="Title" class="form-control" required>
+			</div>
+			<div class="mb-3">
+				<label>Price</label>
+				<input type="number" name="Price" class="form-control" step=".01" required>
+			</div>
+            <div class="mb-3">
+				<label>Servings</label>
+				<input type="number" name="Servings" class="form-control" required>
+			</div>
+            <div class="mb-3">
+				<label>Calories Per Serving</label>
+				<input type="number" name="calorieCount" class="form-control" required>
+			</div>
+            <div class="mb-3">
+				<label>Cooking Time</label>
+				<input type="text" name="cookingTime" class="form-control" required>
+			</div>
+            <div class="mb-3">
+				<label>What's included</label>
+                <input type="text" name="whatIsIncluded" class="form-control" required>
+			</div>
+			<div class="mb-3">
+				<label>Category</label>
+				<input type="text" name="Category" class="form-control" required>
+			</div>
+			<div class="mb-3">
+				<br>
+				<label>Top meal</label>
+				<select class="form-control" name="topMeal" required>
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</select>
+				<br><br>
+			</div>
+            <div class="mb-3">
+				<label>Description</label>
+				<textarea name="Description" class="form-control" rows="8" style="width: 100%;" required></textarea>
+                <br><br>
+			</div>
+            <div class="mb-3">
+                <label>Select image</label>
+				<input type="file" name="image" accept="image/*" required>
+                <br><br>
+			</div>
+			<div class="clearfix">
+                <button type="submit" class="btn btn-info">
+                    Submit
+                </button>
+            </div>
+            <br>
+            <div class="clearfix">
+                <button type="button" class="btn btn-info" onclick="window.location.href = '/dashboard/clerk/meals'">
+                    Cancel
+                </button>
+            </div>
+		</div>
+	</form>
+</div>
+{{>footer}}
