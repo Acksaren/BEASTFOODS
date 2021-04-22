@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 <body>
   
@@ -67,7 +66,7 @@
   <div class="grid">
     {{#each meals}}
       <div class="column">
-        <div class="card">
+        <a href="/mealKit/{{ this._id }}" class="card">
           <img src={{this.imageURL}} height="300" width="300">
           <div class="text">
             <h2 class="headings">{{this.Title}}</h2>
@@ -76,94 +75,9 @@
             <br>
             <button class="button-price">{{this.Price}}</button>
           </div>
-        </div>
+        </a>
       </div>
     {{/each}}
   </div>
 </div>
 {{>footer}}
-=======
-
-<body>
-  
-   {{>header}}
-
-  {{>hero}}
-<br>
-
-<!--Content Section-->
-<div class="container">
-  <h1>Services We Offer</h1>
-  <br>
-  <br>
- 
-    <div class="box1">
-      
-        <img src="/images/food1.png" class="circle-image" height="300" width="300">
-        <h3 class="title">Free Delivery - You choose when</h3>
-        <p class="info">Free delivery to your door steps without<br>
-          the need to step outside. Ingredients come packaged<br>
-          to ensure top quality in every product sent out.
-        </p>
-      </div>
-    
-    <div class="box1">
-    
-        <img src="/images/fresh.jpg" class="circle-image" height="300" width="300"> 
-        <h3 class="title">Fresh And Organic Ingredients</h3>
-        <p class="info">Save the time from grocery shopping!<br>
-          Our dedicated chefs will find top quality products<br>
-          to be used for your food, saving you time and energy.
-          
-        </p>
-      </div>
-    
-    <div class="box1">
-     
-        <img src="/images/spices.jpg" class="circle-image" height="300" width="300"> 
-        <h3 class="title">Different Cuisines, Different Cultures</h3>
-        <p class="info">We have multiple culinary chefs<br>
-           of different ethnicity to perfect the best dish so <br>
-          eating healthy and clean will not be repetitive and boring.
-        </p>
-    </div>
-    
-    <div class="box1">
-     
-        <img src="/images/computer.jpg" class="circle-image" height="300" width="300"> 
-        
-        <h3 class="title">Amazing Meals Online</h3>
-        <p class="info">You can simply download our app or order online,<br/> 
-          choose whichever cuisine you wish to eat and add it <br/>
-          to your cart. 
-        </p>
-      </div>
-    <br>
-    <br>
-  </div>
-
-
-<!-- Top Meals-->
-<div class="top">
-  <h1>Top Meals We Offer</h1> <br>
-  <br>
-  <br>
-  <div class="grid">
-    {{#each meals}}
-      <div class="column">
-        <div class="card">
-          <img src={{this.imageURL}} height="300" width="300">
-          <div class="text">
-            <h2 class="headings">{{this.Title}}</h2>
-            <p class="desc">{{this.whatIsIncluded}}<br>
-            </p>
-            <br>
-            <button class="button-price">{{this.Price}}</button>
-          </div>
-        </div>
-      </div>
-    {{/each}}
-  </div>
-</div>
-{{>footer}}
->>>>>>> 5d55491a8997ad6db6b118013ce14506f1a2957d
