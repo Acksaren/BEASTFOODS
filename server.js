@@ -10,18 +10,28 @@ const fileUpload = require('express-fileupload');
 const dotenv = require('dotenv');
 dotenv.config({path:"./config/keys.env"});
 
-app.engine(".hbs", exphbs({
-    extname: ".hbs",
-    defaultLayout: "main",
-  }));
+// Set up body parser
+app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(fileUpload());
+
+// express-handlebars template engine
+app.engine(".hbs", exphbs({
+  extname: ".hbs",
+  defaultLayout: "main",
+  helpers: {
+    if_eq(a, b, opts) {
+      if(a == b)
+        return opts.fn(this);
+      else
+        return opts.inverse(this);
+    }
+  }
+}));
 
 app.set("view engine", ".hbs");
 
 app.use(express.static(__dirname + "/public"));
-
-app.use(fileUpload());
-
 
 app.get("/headers", (req, res) => {
   const headers = req.headers;
@@ -38,6 +48,12 @@ app.use(session({
       maxAge: 24 * 60 * 60 * 1000 // 24 hours
   }
 }));
+
+app.use(function (req, res, next) {
+  req.session.cart = req.session.cart || {items: {}, total: 0};
+  next();
+});
+
 app.use((req, res, next) => {
   res.locals.session = req.session;
   next();
@@ -53,11 +69,9 @@ app.use("/dashboard/customer", customerController);
 const clerkController = require("./controllers/clerk");
 app.use("/dashboard/clerk", clerkController);
 const loadDataController = require("./controllers/loadData");
-app.use('/load-data/meal-kits', loadDataController)
-
-
-// Set up body parser
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/load-data/meal-kits', loadDataController);
+const shoppingCartController = require("./controllers/shoppingCart");
+app.use('/shopping-cart', shoppingCartController);
 
 
 // call this function after the http server starts listening for requests

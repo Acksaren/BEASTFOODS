@@ -1,0 +1,41 @@
+{{>header}}
+{{>hero}}
+<h1>Shopping Cart</h1>
+{{#if session.cart.total}}
+    <div class="grid" id="cart">
+        {{#each session.cart.items}}
+            <div class="column">
+                <div class="card">
+                    <img src={{this.imageURL}} height="200" width="200">
+                    <div class="text">
+                    <h2 class="headings">{{this.Title}}</h2>
+                        <p class="desc">{{this.whatIsIncluded}}<br></p>
+                        <p class="desc2">${{this.Price}}</p>
+                        <br>
+                        <form action="/shopping-cart/{{ this.id }}/update-meal" method="post">
+                            <label>Quantity</label>
+                            <input type="number" name="quantity" value="{{ this.Quantity }}">
+                            <button class="button-price" type="submit">Update</button>
+                        </form>
+                        <br>
+                        <form action="/shopping-cart/{{ this.id }}/remove-meal" method="post">
+                            <button class="button-price" type="submit">Remove</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <hr>
+    <h1>Total Amount: ${{ session.cart.total }}</h1>
+    <form action="/shopping-cart/checkout" method="POST">
+        <button class="button-price" type="submit" style="float: none; display: block; margin: 20px auto;">
+            Place Order
+        </button>
+    </form>
+{{else}}
+    <h3 style="text-align: center; padding: 20px 10%;">
+        Your cart is empty. <a href="/onTheMenu">Browse</a> meal kits to order.
+    </h3>
+{{/if}}
+{{>footer}}
