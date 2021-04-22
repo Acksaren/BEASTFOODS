@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {{>header}}
 {{>hero}}
 {{#each meals as |category|}}
@@ -22,4 +23,30 @@
   </div>
   <br>
 {{/each}}
+=======
+{{>header}}
+{{>hero}}
+{{#each meals as |category|}}
+  <br>
+  <h1>{{category._id}}</h1>
+  <br>
+  <div class="grid">
+    {{#each category.meals}}
+      <div class="column">
+        <div class="card">
+          <img src={{this.imageURL}} height="200" width="200">
+          <div class="text">
+            <h2 class="headings">{{this.Title}}</h2>
+              <p class="desc">{{this.whatIsIncluded}}<br></p>
+              <p class="desc2">{{this.Description}}</p>
+              <br>
+              <button class="button-price">${{this.Price}}</button>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <br>
+{{/each}}
+>>>>>>> 5d55491a8997ad6db6b118013ce14506f1a2957d
 {{>footer}}

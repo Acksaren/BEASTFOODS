@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -463,3 +464,470 @@ color: rgb(145, 3, 3);
   clear: both;
   display: table;
 }
+=======
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: coral;
+}
+
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: coral;
+  padding: 10px 5vw;
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  width: 30%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: green;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+  transform-origin: top;
+  margin-left: auto;
+  height: 100%;
+}
+
+.links-item {
+  list-style: none;
+  padding: 20px 20px;
+}
+
+.links {
+  color: green;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.links-item:hover {
+  background-color: orange;
+}
+
+.toggle.button {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 10vw;
+  display: none;
+}
+
+h1 {
+  background-color: green;
+  color: yellow;
+}
+
+.container {
+  margin: percentage;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/*Hero Content*/
+.hero-image {
+  background-image: url("images/top.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: orange;
+  text-align: center;
+  cursor: pointer;
+}
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* Content-container*/
+.container {
+  flex-basis: 25%;
+  width: 1500%;
+  height: auto;
+  background: coral;
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.circle-image {
+  border-radius: 50%;
+height: auto;
+}
+
+.box1 {
+  display: flex;
+  width: 23.8%;
+  flex: 1%;
+  height: auto;
+}
+.box1 {
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  .box1 {
+    width: 100%;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.container .box1 .info {
+  color: black;
+  text-align: center;
+}
+
+/* Top Meals */
+.top {
+  flex-basis: 25%;
+  text-align: center;
+  font-size: 15px;
+}
+
+.top .heading {
+  text-align: center;
+  font-size: 40px;
+  color: yellow;
+}
+
+.column {
+  float: left;
+  /* width: 25%; */
+  padding: 0 10px;
+}
+/* Remove extra left and right margins, due to padding */
+.grid {
+  margin: 0 -5px;
+
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Clear floats after the columns */
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  text-align: center;
+  background-color: orange;
+  color: rgb(121, 69, 2);
+  border: 1px solid #ccc;
+}
+
+.card > img {
+  /* display: block; */
+  border: 0;
+  width: 100%;
+  object-fit: cover;
+  /* height: auto; */
+}
+
+.text {
+  padding: 0px 20px 20px;
+  text-align: center;
+}
+
+.button-price {
+  float: right;
+  border: 1px solid rgb(255, 205, 68);
+  color: rgb(20, 20, 19);
+  background-color: rgb(255, 205, 68);
+  padding: 10px;
+  padding-bottom: 10px;
+  width: 50%;
+}
+
+.container .text .info {
+  color: rgb(63, 62, 62);
+  text-align: center;
+}
+
+.button-price:hover {
+  color: orange;
+  background-color: yellow;
+}
+
+/* Footer */
+footer {
+  position: static;
+  bottom: 0;
+}
+
+.footer-bottom {
+  background-color: coral;
+  box-sizing: content-box;
+  width: 100%;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 55px 50px;
+  margin-top: 80px;
+}
+
+.footer-bottom .footer-left,
+.footer-bottom .footer-center,
+.footer-bottom .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-bottom .footer-left {
+  width: 40%;
+}
+
+.footer-bottom h3 {
+  color: green;
+  font: normal 36px "Cookie";
+  margin: 0;
+}
+
+.footer-bottom h3 span {
+  color: limegreen;
+}
+
+.footer-bottom .footer-links {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-bottom .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-bottom .footer-company-name {
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-bottom .footer-center {
+  width: 25%;
+}
+
+.footer-bottom .footer-center i {
+  color: white;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-bottom .footer-center i.fa-envelope {
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.footer-bottom .footer-center p {
+  display: inline-block;
+  color: white;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer-bottom .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.footer-bottom .footer-center p a {
+  color: green;
+  text-decoration: "cookie";
+}
+
+.footer-bottom .footer-right {
+  width: 30%;
+}
+
+.footer-bottom .footer-company-about {
+  line-height: 20px;
+  color: green;
+  font: bold;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer-bottom .footer-company-about span {
+  display: block;
+  color: green;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-bottom .footer-icons {
+  margin-top: 25px;
+}
+
+.footer-bottom .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+  color: blue;
+}
+
+.footer-bottom .footer-icons a:hover {
+  border: 1px solid coral;
+  color: white;
+}
+
+@media (max-width: 880px) {
+  .footer-bottom {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-bottom .footer-left,
+  .footer-bottom .footer-center,
+  .footer-bottom .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-bottom .footer-center i {
+    margin-left: 0;
+  }
+
+  .main {
+    line-height: normal;
+    font-size: auto;
+  }
+}
+
+
+
+/* login and register forms */
+#auth-form {
+  width: 50%;
+  margin: 30px auto 100px;
+  padding: 0 10%;
+}
+
+#auth-form .carrd-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#auth-form .carrd-subtitle {
+  color: rgb(56, 102, 54);
+  font-size: 1.1em;
+  margin: 0;
+}
+
+#auth-form input.form-control {
+  width: calc(100% - 22px);
+  height: 44px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+#auth-form button {
+  float: right;
+  border: 1px solid rgb(255, 205, 68);
+  color: rgb(20, 20, 19);
+  background-color: rgb(255, 205, 68);
+  padding: 10px;
+  padding-bottom: 10px;
+  width: 50%;
+}
+
+.form-error {
+display: block;
+color: rgb(145, 3, 3);
+}
+/*welcome page*/
+.wel-container {
+  text-align: center;
+}
+
+.btn-info {
+
+  border: 1px solid rgb(255, 205, 68);
+  color: rgb(20, 20, 19);
+  background-color: rgb(255, 205, 68);
+  padding: 10px;
+  padding-bottom: 10px;
+  width: auto;
+  display: inline-block;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+>>>>>>> 5d55491a8997ad6db6b118013ce14506f1a2957d
