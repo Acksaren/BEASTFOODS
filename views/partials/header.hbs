@@ -11,6 +11,13 @@
          </li>
        
         {{#if session.user}}
+          {{#if_eq session.role 'customer'}}
+            <li class="links-item">
+              <a href="/shopping-cart" class="links">
+                CART
+              </a>
+            </li>
+          {{/if_eq}}
           <li class="links-item">
             <a href="/dashboard/{{ session.role }}" class="links">
               MY DASHBOARD

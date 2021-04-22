@@ -1,0 +1,53 @@
+{{>header}}
+{{>hero}}
+<div id="mealKit" class="clearfix">
+    <img src="{{ meal.imageURL }}" alt="{{ meal.Title }}" id="mealCover" class="left">
+    <div id="mealInfo" class="right">
+        <h2 id="mealTitle">{{meal.Title}}</h2>
+        <p id="mealIncludes">{{meal.whatIsIncluded}}<br></p>
+        <h4 id="mealPrice">${{ meal.Price }}</h4>
+        {{#if session.user}}
+            {{#if isCustomer}}
+                {{#if mealOrdered}}
+                    <a href="/shopping-cart" class="btn-info">
+                        Update in Cart
+                    </a>
+                {{else}}
+                    <form action="/shopping-cart/{{ meal._id }}/add-meal" method="POST">
+                        <label style="display: block;">Quantity:</label>
+                        <input type="number" name="quantity" required/>
+                        <button type="submit" class="button-price">Add to Order</button>
+                    </form>
+                {{/if}}
+            {{else}}
+                <p class="description">
+                    You are not authorized to order a meal.
+                </p>
+            {{/if}}
+        {{else}}
+            <p>
+                <a href="/user/sign-in">Sign in</a> to order this meal.
+            </p>
+        {{/if}}
+        <p id="mealDesc">{{meal.Description}}</p>
+        <ul>
+            <li>
+                <strong>Category:</strong> <br>
+                <span>{{ meal.Category }}</span>
+            </li>
+            <li>
+                <strong>Cooking Time:</strong> <br>
+                <span>{{ meal.cookingTime }}</span>
+            </li>
+            <li>
+                <strong>Number of Servings:</strong> <br>
+                <span>{{ meal.Servings }}</span>
+            </li>
+            <li>
+                <strong>Calories per Serving:</strong> <br>
+                <span>{{ meal.calorieCount }}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+{{>footer}}
